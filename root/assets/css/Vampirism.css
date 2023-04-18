@@ -1,9 +1,0 @@
-@font-face {
-	font-family: 'Vampirism';
-	src: url(../../assets/fonts/vampirism.woff?h=422ff59d122011a08a2d73e38ca6ae4e) format('woff'),
-	url(../../assets/fonts/vampirism.ttf?h=422ff59d122011a08a2d73e38ca6ae4e) format('truetype'),
-	url(../../assets/fonts/vampirism.svg?h=422ff59d122011a08a2d73e38ca6ae4e) format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: auto;
-}
