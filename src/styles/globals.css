@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Vampirism';
+  src: url('/assets/fonts/vampirism.woff') format('woff'),
+       url('/assets/fonts/vampirism.ttf') format('truetype'),
+       url('/assets/fonts/vampirism.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0d0d14;
+    color: #e2e0e8;
+    font-family: 'Lora', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-7 py-3 rounded-lg font-raleway font-700 text-white text-sm uppercase tracking-wider transition-all duration-300;
+    background: linear-gradient(135deg, #620385, #9b12d4);
+    border: 1px solid #9b12d4;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 24px rgba(155, 18, 212, 0.6);
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    @apply inline-block px-7 py-3 rounded-lg font-raleway font-semibold text-white text-sm uppercase tracking-wider transition-all duration-300;
+    background: transparent;
+    border: 1px solid rgba(155, 18, 212, 0.5);
+  }
+  .btn-outline:hover {
+    border-color: #9b12d4;
+    box-shadow: 0 0 16px rgba(155, 18, 212, 0.35);
+    transform: translateY(-2px);
+  }
+  .btn-curseforge {
+    @apply inline-block px-5 py-2 rounded-lg text-white text-sm font-semibold transition-all duration-300;
+    background-color: #f06433;
+    border: 1px solid #e15d2f;
+  }
+  .btn-curseforge:hover {
+    background-color: #e15d2f;
+    box-shadow: 0 0 14px rgba(240, 100, 51, 0.5);
+    transform: translateY(-1px);
+  }
+  .btn-modrinth {
+    @apply inline-block px-5 py-2 rounded-lg text-white text-sm font-semibold transition-all duration-300;
+    background-color: #2eaa76;
+    border: 1px solid #279265;
+  }
+  .btn-modrinth:hover {
+    background-color: #279265;
+    box-shadow: 0 0 14px rgba(46, 170, 118, 0.5);
+    transform: translateY(-1px);
+  }
+  .btn-wiki {
+    @apply inline-block px-5 py-2 rounded-lg text-white text-sm font-semibold transition-all duration-300;
+    background-color: #3d98eb;
+    border: 1px solid #2478c5;
+  }
+  .btn-wiki:hover {
+    background-color: #2882d5;
+    box-shadow: 0 0 14px rgba(61, 152, 235, 0.5);
+    transform: translateY(-1px);
+  }
+  .card-dark {
+    background-color: #12101a;
+    border: 1px solid rgba(98, 3, 133, 0.35);
+    @apply rounded-xl transition-all duration-300;
+  }
+  .card-dark:hover {
+    border-color: rgba(155, 18, 212, 0.7);
+    box-shadow: 0 0 20px rgba(98, 3, 133, 0.25);
+    transform: translateY(-3px);
+  }
+  .section-alt {
+    background-color: #12101a;
+  }
+  .vampirism-heading {
+    font-family: 'Vampirism', serif;
+    color: #9b12d4;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #c084fc, #e879f9, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .font-700 {
+    font-weight: 700;
+  }
+  .font-raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Hero entrance animations */
+.hero-logo {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+.hero-text {
+  animation: fadeSlideIn 0.9s ease-out 0.3s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}

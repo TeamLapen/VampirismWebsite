@@ -1,9 +1,13 @@
+# Stage 1: Build
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --frozen-lockfile
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve
 FROM nginx:alpine
-
-# Copy the contents of the root directory to the Nginx html directory
-COPY root/ /usr/share/nginx/html/
-
-# Expose port 80
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-
-# The default command for the nginx:alpine image is to start Nginx, so no CMD is needed.
